@@ -16,6 +16,20 @@ The suite provides an end-to-end evaluation workflow for conversational AI teams
 - **Voice AI testing:** Execute phone-based evaluations through Twilio or LiveKit with streaming speech-to-text, configurable text-to-speech, call recordings, and voice-specific latency signals.
 - **Flexible test inputs:** Author scenarios manually, generate them with AI, bulk-import test cases, or upload PDF and DOCX conversations for evaluation.
 
+## Product tour
+
+### Evaluation dashboard
+
+Monitor aggregate quality, pass rate, time to first token, latency percentiles, and recent evaluation runs from a single release-readiness view.
+
+![Voice AI Evaluation Suite dashboard showing KPI, pass-rate, and latency metrics](Screenshots/Dashboard%20-%20Eval%20Suite.png)
+
+### Metrics library
+
+Define and manage reusable conversation-level and turn-level metrics that can be applied consistently across evaluation runs.
+
+![Metrics library showing reusable conversational AI evaluation criteria](Screenshots/Metrics%20-%20Eval%20Suite.png)
+
 ### Product and technical design
 
 The application reflects several concerns central to shipping enterprise AI products:
