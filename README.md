@@ -2,6 +2,30 @@
 
 A locally-hosted, full-stack web app for evaluating AI conversational agents — author scenarios, run multi-trial evaluations, score them, inspect transcripts/tool calls, compare versions, and run voice-agent evaluations over **Twilio** or **LiveKit** (with live transcription and call recording).
 
+## Product capabilities
+
+The suite provides an end-to-end evaluation workflow for conversational AI teams moving agents from prototype to production:
+
+- **Scenario and persona design:** Define test cases with seed utterances, customer goals, tone, frustration level, tags, and explicit success criteria. Expected outcomes can be expressed as natural-language requirements, required tool calls, or KPI thresholds.
+- **Repeatable experimentation:** Run multiple trials per scenario with configurable turn limits and pass thresholds. This makes non-deterministic agent behavior measurable instead of relying on one-off demos.
+- **LLM-assisted evaluation:** Use model-based judges to score conversation outcomes, return evidence-backed rationales, and break compound requirements into individually scored components. OpenAI and Anthropic are supported for evaluation, with a deterministic mock fallback for local development.
+- **Quality, performance, and cost metrics:** Track pass/fail results alongside time to first token, average and end-to-end latency, token usage, model-call count, estimated cost, and conversational talk ratio.
+- **Trace-level observability:** Inspect complete transcripts and the associated tool and knowledge-base activity, including arguments, responses, retrieved chunks, status, and latency. This helps teams distinguish prompt failures from orchestration, retrieval, or integration failures.
+- **Agent version comparison:** Compare evaluation runs across agent and prompt versions to identify regressions, quantify improvements, and support evidence-based release decisions.
+- **Human-in-the-loop quality governance:** Add annotations, assign reviews, collect human ratings, and analyze evaluator disagreement, false positives, false negatives, and inter-rater agreement.
+- **Voice AI testing:** Execute phone-based evaluations through Twilio or LiveKit with streaming speech-to-text, configurable text-to-speech, call recordings, and voice-specific latency signals.
+- **Flexible test inputs:** Author scenarios manually, generate them with AI, bulk-import test cases, or upload PDF and DOCX conversations for evaluation.
+
+### Product and technical design
+
+The application reflects several concerns central to shipping enterprise AI products:
+
+- Evaluation datasets are modeled as reusable agents, personas, scenarios, metrics, runs, and trial-level traces in SQLite through Drizzle ORM.
+- The evaluation loop separates customer simulation, agent execution, scoring, and analysis so each layer can be configured and diagnosed independently.
+- Multi-trial runs provide a foundation for measuring reliability and defining release gates rather than treating a single successful response as sufficient evidence.
+- Provider integrations are modular: OpenAI and Groq power simulation, OpenAI or Anthropic can judge results, Deepgram supports transcription, and Twilio or LiveKit provide voice transport.
+- Credentials and evaluation data remain local by default, supporting rapid prototyping while reducing the risk of committing sensitive configuration.
+
 - **Frontend:** React + TypeScript + Vite + Tailwind → http://localhost:3000
 - **Backend:** Node + Express + TypeScript + SQLite (Drizzle) → http://localhost:3001
 
