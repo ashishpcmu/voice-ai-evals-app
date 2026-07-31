@@ -45,8 +45,8 @@ The application reflects several concerns central to shipping enterprise AI prod
 
 ```bash
 # 1. Clone
-git clone git@github.com:ashishpcmu/voice-ai-evaluation-app.git
-cd voice-ai-evaluation-app
+git clone git@github.com:ashishpcmu/voice-ai-evals-app.git
+cd voice-ai-evals-app
 
 # 2. Create your local environment file, then add your own API keys
 cp .env.example .env
@@ -123,7 +123,7 @@ npm run typecheck  # type-check both workspaces
 ## Project layout
 
 ```
-voice-ai-evaluation-app/
+voice-ai-evals-app/
 ├── frontend/     # React app (Vite) — pages, components, API client
 ├── backend/      # Express API — routes, services (simulator, scorer, voice, livekit), SQLite/Drizzle
 ├── .env.example  # credential-free configuration template — copy to .env
