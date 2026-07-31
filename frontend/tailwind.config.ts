@@ -22,6 +22,10 @@ const config: Config = {
         'success-green': '#059669',
         'warning-amber': '#D97706',
         'error-red':     '#DC2626',
+        'sidebar-start': '#17151F',   // graphite with a subtle aubergine undertone
+        'sidebar-end':   '#252131',   // lifted charcoal for gradient depth
+        'sidebar-accent':'#6D5BD0',   // restrained violet for selected navigation
+        'sidebar-muted': '#AAA3B5',   // accessible secondary text on the dark surface
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],

@@ -28,23 +28,23 @@ const navLinks = [
 
 export default function Sidebar() {
   return (
-    <aside className="w-60 bg-gradient-to-b from-dark-navy to-dark-navy-2 flex-shrink-0 flex flex-col h-screen sticky top-0">
+    <aside className="w-60 bg-gradient-to-b from-sidebar-start to-sidebar-end flex-shrink-0 flex flex-col h-screen sticky top-0 shadow-xl shadow-black/10">
       {/* Logo */}
       <div className="px-4 py-5 border-b border-white/10">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-primary-blue rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-sidebar-accent rounded-lg flex items-center justify-center shadow-sm shadow-black/20">
             <Zap className="w-4.5 h-4.5 text-white" size={18} />
           </div>
           <div>
             <div className="text-white font-bold text-sm leading-tight">AI Eval</div>
-            <div className="text-blue-300 text-xs">Suite</div>
+            <div className="text-sidebar-muted text-xs">Suite</div>
           </div>
         </div>
       </div>
 
       {/* Nav */}
       <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
-        <div className="text-blue-400 text-xs font-semibold uppercase tracking-wider px-3 mb-3">Navigation</div>
+        <div className="text-sidebar-muted text-xs font-semibold uppercase tracking-wider px-3 mb-3">Navigation</div>
         {navLinks.map(link => (
           <NavLink
             key={link.to}
@@ -60,7 +60,7 @@ export default function Sidebar() {
         ))}
 
         {/* Beta section */}
-        <div className="text-blue-400 text-xs font-semibold uppercase tracking-wider px-3 mt-5 mb-2">Beta</div>
+        <div className="text-sidebar-muted text-xs font-semibold uppercase tracking-wider px-3 mt-5 mb-2">Beta</div>
         <NavLink
           to="/voice"
           className={({ isActive }) =>
@@ -76,14 +76,14 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="px-4 py-4 border-t border-white/10">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-primary-blue/30 rounded-full flex items-center justify-center">
+          <div className="w-8 h-8 bg-sidebar-accent/30 ring-1 ring-sidebar-accent/40 rounded-full flex items-center justify-center">
             <span className="text-white text-xs font-semibold">PM</span>
           </div>
           <div className="flex-1 min-w-0">
             <div className="text-white text-xs font-medium truncate">Product Manager</div>
-            <div className="text-blue-300 text-xs truncate">Safeguard Insurance</div>
+            <div className="text-sidebar-muted text-xs truncate">Northstar Financial</div>
           </div>
-          <ChevronRight size={14} className="text-blue-400 flex-shrink-0" />
+          <ChevronRight size={14} className="text-sidebar-muted flex-shrink-0" />
         </div>
       </div>
     </aside>
