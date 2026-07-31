@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Personal / local-only folders (not shared with the team)
+docs/
+files/
+.claude/
+
+# Environment variables (contains API keys)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+frontend/dist/
+backend/dist/
+
+# Local databases
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Call recordings (auto-cleaned after 30 min, but never commit)
+backend/data/recordings/
+
+# User-uploaded transcripts and documents
+backend/uploads/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
